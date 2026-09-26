@@ -69,5 +69,3 @@ python -m scripts.try_semantic_search "bank or financial institution" --k 5
 - Semantic search embeds entity *names* only (not full relationship facts), so results are ranked by how similar a name reads, not by broader context — quality also depends on how many distinct entities of a given kind exist in the loaded data.
 - If you already have data loaded from before semantic search was added, `MERGE`'s label-matching means adding the shared `:Entity` label to the query can create duplicate nodes instead of tagging existing ones — wipe the graph (`MATCH (n) DETACH DELETE n`) and reload from `data/processed/triples.jsonl` rather than reloading on top of old data.
 
-## License
-MIT
