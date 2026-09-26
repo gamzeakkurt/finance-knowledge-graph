@@ -1,0 +1,11 @@
+neo4j>=5.20
+pydantic>=2.7
+requests>=2.31
+python-dotenv>=1.0
+ollama>=0.3
+streamlit>=1.35
+pyvis>=0.3.2
+pandas>=2.2
+lxml>=5.2
+tqdm>=4.66
+pytest>=8.2
