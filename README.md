@@ -19,6 +19,9 @@ flowchart LR
 3. **Load** (`src/graph/`) — upsert entities and relationships into Neo4j via `MERGE`, with basic name normalization to reduce duplicate nodes.
 4. **Explore** (`src/app/`) — Streamlit app: search an entity, view its interactive neighborhood graph, see basic graph stats.
 
+## Roadmap
+- [ ] **Semantic search** — embed entity names locally (Ollama `nomic-embed-text`), index them with Neo4j's native vector index, and let users search by meaning (e.g. "pharma company") instead of exact substring match.
+
 ## Setup
 
 ### 1. Clone and install dependencies
@@ -59,6 +62,7 @@ streamlit run src/app/streamlit_app.py
 - Entity resolution is simple string normalization (case, common suffixes) — no fuzzy matching or external ID linking (e.g. Wikidata QIDs) yet.
 - Local 8B model extraction is noisier than a hosted frontier model; the pipeline validates and retries but some garbage triples can still slip through.
 - Relation vocabulary is intentionally small/fixed to keep the graph clean, at the cost of missing nuance in the source text.
+- Search is currently exact/substring match on entity name only — semantic search is planned, see [Roadmap](#roadmap).
 
 ## License
 MIT
